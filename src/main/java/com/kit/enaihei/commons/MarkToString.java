@@ -219,9 +219,9 @@ public class MarkToString extends ReflectionToStringBuilder {
             } else if ((null != subKeys && subKeys.contains(key))) {
                 String maskValue = NULL;
                 if (value.getClass() == JSONObject.class) {
-                     maskValue = processMap(maskKeys, null, (Map) value, size);
+                     maskValue = processMap(maskKeys, subKeys, (Map) value, size);
                 } else if (value.getClass() == JSONArray.class) {
-                    maskValue = processCollection(maskKeys, null, (List) value, size);
+                    maskValue = processCollection(maskKeys, subKeys, (List) value, size);
                 } else {
                     maskValue = mask(value.toString());
                 }
